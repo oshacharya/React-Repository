@@ -1,33 +1,38 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import { Store } from './forGit/forRedux/Store'
-import { useSelector,useDispatch } from 'react-redux'
-import { incNumber, decNumber } from './forGit/forRedux/Action'
+import Form from "./forGit/Form";
 
 const App = () => {
-  const myState=useSelector((state)=>state.changeTheNumber)
-  const dispatch=useDispatch()
-Store.subscribe(()=>console.log(Store.getState()))
+  return <></>;
+};
+export default App;
+
+// for Redux
+/*
+import { useSelector, useDispatch } from "react-redux";
+import { incNumber, decNumber } from "./forGit/forRedux/Action";
+
+const App = () => {
+  const myState = useSelector((state) => state.changeTheNumber);
+  const dispatch = useDispatch();
   return (
     <>
-    <Provider Store={Store}>
-    <div className="container">
-    <h1>Increment/Decrement Counter</h1>
-    <h4>using React and redux</h4>
-    <div className="">
-      <a onClick={()=>dispatch(decNumber())} title='Decrement'><span> - </span></a>
-      <input type="text" value="0" name="" className=""></input>
-      <a onClick={()=>dispatch(incNumber())} title='Increment'><span> + </span></a>
-    </div>
-    </div>
-    </Provider>
+      <div className="container">
+        <h1>Increment/Decrement Counter</h1>
+        <h4>using React and redux</h4>
+        <div className="quantity">
+          <button onClick={() => dispatch(decNumber())} title="Decrement">
+            <span> - </span>
+          </button>
+          <input type="text" value={myState} name="" className=""></input>
+          <button onClick={() => dispatch(incNumber())} title="Increment">
+            <span> + </span>
+          </button>
+        </div>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default App
-
-
+export default App;
 
 //--------------------------------------------------------------------------------------------------
 /*import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom"
@@ -40,10 +45,10 @@ import Contact from "./forGit/Contact"
 function App() {
   return (
     <div className="App">
-      <Provider store={Store}> 
-      <Router>
-          <Link to="/">Home</Link>
-          <Link to="/Login">Login</Link>
+    <Provider store={Store}> 
+    <Router>
+    <Link to="/">Home</Link>
+    <Link to="/Login">Login</Link>
           <Link to="/Contact">Contact</Link>
 
         <Routes>

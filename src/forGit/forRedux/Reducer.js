@@ -1,5 +1,3 @@
-import { Action } from "history";
-
 const initialState = 0;
 
 const changeTheNumber = (state = initialState, Action) => {
